@@ -1,7 +1,8 @@
-const port = process.env.PORT || 8000;
+const port = process.env.PORT
 const express = require('express')
 const fs = require('fs')
 const app = express()
+app.use(express.static('public'))
 app.use(express.json())
 const dotenv = require('dotenv')
 dotenv.config()
@@ -13,7 +14,7 @@ const pool = new Pool ({
   port: 5432,
   database: 'practiceapi'
 })
-app.use(express.static('public'))
+
 
 app.listen(port, (err)=>{
   if(err){

@@ -1,0 +1,51 @@
+#theTitle{
+  color: red;
+  text-align: center;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+body{
+  background-color: lavender;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 700px;
+}
+
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+
+ul li:hover {
+  background: #ddd;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+
+
+

@@ -3,6 +3,8 @@ const express = require('express')
 const fs = require('fs')
 const app = express()
 app.use(express.json())
+const dotenv = require('dotenv')
+dotenv.config()
 const Pool = require('pg').Pool
 const pool = new Pool ({
   user: 'danmorro',

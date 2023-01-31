@@ -12,17 +12,17 @@ const Pool = require('pg').Pool
 const client = new Pool({ 
   connectionString: process.env.DATABASE_URL 
 });
-app.route('/workout')
-  .post(async(req,res)=>{
+
+app.post('/workout', async(req,res)=>{
     let {theworkout} = req.body
     await client.query(`INSERT into workout (theworkout) VALUES ('${theworkout}')`);
     res.json('added')
   })
 app.get('/allworkout', async(req,res)=>{
     const allWork = await client.query('SELECT * FROM workout')
-    res.json(allWork.rows)
+    res.send.json(allWork.rows)
   })
 
-app.listen(port,(err)=>{
-  console.log(err)
+app.listen(port,()=>{
+  console.log(`working on port ${port}`)
 })

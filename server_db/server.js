@@ -12,11 +12,13 @@ const pool = new Pool ({
   password: '',
   host: 'localhost',
   port: 5432,
-  database: 'practiceapi'
+  database: 'workouts'
 })
 
-
-app.listen(port, (err)=>{
+app.post('/api',(req,res)=>{
+  console.log('suck me')
+})
+app.listen(4000, (err)=>{
   if(err){
     console.log(err)
   }console.log('working')

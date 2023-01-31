@@ -2,23 +2,27 @@ const express = require('express')
 const fs = require('fs')
 const app = express()
 app.use(express.static('public'))
-app.use(express.json())
 const dotenv = require('dotenv')
+const cors = require('cors')
+app.use(cors())
+app.use(express.json())
 dotenv.config()
 const port = process.env.PORT || 4000
 const Pool = require('pg').Pool
 const client = new Pool({ 
   connectionString: process.env.DATABASE_URL 
 });
-app.get('/api',(req,res)=>{
-  res.json('hi')
-})
-app.post('/api',(req,res)=>{
-  res.json('hi')
-})
-app.listen(port, (err)=>{
-  if(err){
-    console.log(err)
-  }console.log('working')
-})
+app.route('/workout')
+  .post(async(req,res)=>{
+    let {theworkout} = req.body
+    await client.query(`INSERT into workout (theworkout) VALUES ('${theworkout}')`);
+    res.json('added')
+  })
+  .get(async(req,res)=>{
+    const allWork = await client.query('SELECT * FROM workout')
+    res.json(allWork.rows)
+  })
 
+app.listen(port,(err)=>{
+  console.log(err)
+})

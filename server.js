@@ -11,8 +11,8 @@ const client = new Pool({
   connectionString: process.env.DATABASE_URL 
 });
 
-app.post('/api',(req,res)=>{
-  console.log('hello')
+app.get('/api',(req,res)=>{
+  res.json('hello')
 })
 app.listen(port, (err)=>{
   if(err){

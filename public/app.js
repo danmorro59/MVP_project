@@ -6,7 +6,7 @@ postbtn.addEventListener('click', async(e)=>{
   const theworkout = document.getElementById('mymon').value
   console.log(theworkout)
   try {
-    const response = await fetch('http://localhost:4000/workout', {
+    const response = await fetch('https://workout-app-9y9b.onrender.com/workout', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({theworkout})

@@ -7,16 +7,12 @@ app.use(express.json())
 const dotenv = require('dotenv')
 dotenv.config()
 const Pool = require('pg').Pool
-const pool = new Pool ({
-  user: 'danmorro',
-  password: '',
-  host: 'localhost',
-  port: 5432,
-  database: 'workouts'
-})
+const client = new Pool({ 
+  connectionString: process.env.DATABASE_URL 
+});
 
 app.post('/api',(req,res)=>{
-  console.log('suck me')
+  console.log('hello')
 })
 app.listen(4000, (err)=>{
   if(err){

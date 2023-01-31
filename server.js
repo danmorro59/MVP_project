@@ -20,7 +20,7 @@ app.post('/workout', async(req,res)=>{
   })
 app.get('/workout', async(req,res)=>{
     const allWork = await client.query('SELECT * FROM workout')
-    res.send.json(allWork.rows)
+    res.json(allWork.rows)
   })
 
 app.listen(port,()=>{

@@ -18,7 +18,7 @@ app.post('/workout', async(req,res)=>{
     await client.query(`INSERT into workout (theworkout) VALUES ('${theworkout}')`);
     res.json('added')
   })
-app.get('/allworkout', async(req,res)=>{
+app.get('/workout', async(req,res)=>{
     const allWork = await client.query('SELECT * FROM workout')
     res.send.json(allWork.rows)
   })

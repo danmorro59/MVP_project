@@ -1,9 +1,9 @@
 const postBTN = document.getElementById('post')
-
+let texCont = document.getElementById('fname').textContent
 postBTN.addEventListener('click',async(e)=>{
   e.preventDefault();
   try {
-    const body = 'hello';
+    const body = texCont
     const response = await fetch('https://workout-app-9y9b.onrender.com/api', {
       mode: 'no-cors',
       method: 'POST',

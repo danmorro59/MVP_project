@@ -10,9 +10,11 @@ const Pool = require('pg').Pool
 const client = new Pool({ 
   connectionString: process.env.DATABASE_URL 
 });
-
+app.get('/api',(req,res)=>{
+  res.json('hi')
+})
 app.post('/api',(req,res)=>{
-  console.log('this post is working')
+  res.json('hi')
 })
 app.listen(port, (err)=>{
   if(err){

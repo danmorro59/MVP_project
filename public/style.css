@@ -41,7 +41,14 @@ ul li:hover {
 .container{
   display: flex;
   justify-content: center;
-
+}
+.dayContainer{
+  border: 2px solid black;
+  width: 500px;
+  height: 500px;
+}
+.newContainer{
+  display: flex;
 }
 
 

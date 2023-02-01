@@ -86,8 +86,7 @@ postreqbtn.addEventListener('click', async(e)=>{
   console.log(monValue)
   try {
     const response = await fetch('https://workout-app-9y9b.onrender.com/workout', {
-      method: "DELETE",
-      headers: {"Content-Type": "application/json"}
+      method: "DELETE"
     }).then((response)=>response.json())
   } catch (error) {
     console.log(error)

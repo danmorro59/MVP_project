@@ -83,7 +83,6 @@ postreqbtn.addEventListener('click', async(e)=>{
   e.preventDefault()
   const container = document.getElementsByClassName('container')
   $(container).hide()
-  console.log(monValue)
   try {
     const response = await fetch('https://workout-app-9y9b.onrender.com/workout', {
       method: "DELETE"

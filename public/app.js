@@ -183,7 +183,7 @@ postreqbtn.addEventListener('click', async(e)=>{
     .then((response)=>(response.json()))
     .then((data)=>{
       const monWorkout = data[0].day
-      const monHeader = createElement('h1')
+      const monHeader = document.createElement('h1')
       monHeader.textContent = monWorkout
       $(monHeader).appendTo(monCont)
     })

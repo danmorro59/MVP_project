@@ -1,12 +1,25 @@
 
-
 const postbtn = document.getElementById('postMon')
-postbtn.addEventListener('click', (e)=>{
+postbtn.addEventListener('click', async(e)=>{
   e.preventDefault()
+  const monValue = document.getElementById('mymon').value
   const theForm = document.getElementById('monForm')
   $(theForm).hide()
   const formCont = document.getElementsByClassName('monformcont')
   $(`<h3>Submitted<h3>`).appendTo(formCont)
+  console.log(monValue)
+  try {
+    const theworkout = monValue
+    const day = 'Monday'
+    const response = await fetch('https://workout-app-9y9b.onrender.com/workout', {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({theworkout, day})
+    }).then((response)=>response.json())
+  } catch (error) {
+    console.log(error)
+  }
+
 })
 const tuepostbtn = document.getElementById('postTue')
 tuepostbtn.addEventListener('click', (e)=>{
@@ -63,13 +76,14 @@ sunpostbtn.addEventListener('click', (e)=>{
 
 
 
-const monValue = document.getElementById('mymon').value
+
 
 const postreqbtn = document.getElementById('postreq')
 postreqbtn.addEventListener('click', async(e)=>{
   e.preventDefault()
   const container = document.getElementsByClassName('container')
   $(container).hide()
+  console.log(monValue)
   try {
     const theworkout = monValue
     const day = 'Monday'

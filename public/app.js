@@ -179,7 +179,7 @@ postreqbtn.addEventListener('click', async(e)=>{
 
 
   try {
-    const response = await fetch('https://workout-app-9y9b.onrender.com/workout').then((response)=>console.log(response.json()))
+    const response = await fetch('https://workout-app-9y9b.onrender.com/workout').then((response)=>(console.log(response)))
   } catch (error) {
     console.log(error)
   }

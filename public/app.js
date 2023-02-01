@@ -182,7 +182,10 @@ postreqbtn.addEventListener('click', async(e)=>{
     const response = await fetch('https://workout-app-9y9b.onrender.com/workout')
     .then((response)=>(response.json()))
     .then((data)=>{
-      console.log(data)
+      const monWorkout = data[0].day
+      const monHeader = createElement('h1')
+      monHeader.textContent = monWorkout
+      $(monHeader).appendTo(monCont)
     })
   } catch (error) {
     console.log(error)

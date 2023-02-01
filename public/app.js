@@ -79,10 +79,20 @@ sunpostbtn.addEventListener('click', (e)=>{
 
 
 const postreqbtn = document.getElementById('postreq')
-postreqbtn.addEventListener('click', (e)=>{
+postreqbtn.addEventListener('click', async(e)=>{
   e.preventDefault()
   const container = document.getElementsByClassName('container')
   $(container).hide()
+  console.log(monValue)
+  try {
+    const response = await fetch('https://workout-app-9y9b.onrender.com/workout', {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"}
+    }).then((response)=>response.json())
+  } catch (error) {
+    console.log(error)
+  }
+
 })
 
 

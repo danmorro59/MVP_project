@@ -22,6 +22,10 @@ app.get('/workout', async(req,res)=>{
     const allWork = await client.query('SELECT * FROM workout')
     res.json(allWork.rows)
   })
+app.delete('/workout', async(req,res)=>{
+  await client.query('DELETE * from workout');
+  res.json('deleted')
+})
 
 app.listen(port,()=>{
   console.log(`working on port ${port}`)

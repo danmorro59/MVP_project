@@ -14,8 +14,8 @@ const client = new Pool({
 });
 
 app.post('/workout', async(req,res)=>{
-    let {theworkout} = req.body
-    await client.query(`INSERT into workout (theworkout) VALUES ('${theworkout}')`);
+    let {theworkout, day} = req.body
+    await client.query(`INSERT into workout (theworkout,day) VALUES ('${theworkout}','${day}')`);
     res.json('added')
   })
 app.get('/workout', async(req,res)=>{

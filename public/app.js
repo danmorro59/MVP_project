@@ -184,9 +184,33 @@ postreqbtn.addEventListener('click', async(e)=>{
     .then((data)=>{
       console.log(data)
       const monWorkout = data[0].theworkout
+      const tueWorkout = data[1].theworkout
+      const wedWorkout = data[2].theworkout
+      const thuWorkout = data[3].theworkout
+      const friWorkout = data[4].theworkout
+      const satWorkout = data[5].theworkout
+      const sunWorkout = data[6].theworkout
       const monHeader = document.createElement('h1')
       monHeader.textContent = monWorkout
       $(monHeader).appendTo(monCont)
+      const tueHeader = document.createElement('h1')
+      tueHeader.textContent = tueWorkout
+      $(monHeader).appendTo(tueCont)
+      const wedHeader = document.createElement('h1')
+      wedHeader.textContent = wedWorkout
+      $(wedHeader).appendTo(wedCont)
+      const thuHeader = document.createElement('h1')
+      thuHeader.textContent = thuWorkout
+      $(thuHeader).appendTo(thuCont)
+      const friHeader = document.createElement('h1')
+      friHeader.textContent = friWorkout
+      $(friHeader).appendTo(friCont)
+      const satHeader = document.createElement('h1')
+      satHeader.textContent = satWorkout
+      $(satHeader).appendTo(satCont)
+      const sunHeader = document.createElement('h1')
+      sunHeader.textContent = sunWorkout
+      $(sunHeader).appendTo(sunCont)
     })
   } catch (error) {
     console.log(error)
